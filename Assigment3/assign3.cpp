@@ -13,17 +13,12 @@ class Cylinder {
 
     public:
 
-    Cylinder(void){
-        //cout<<"Cylinder (void)"<<endl;
-         radius=1;
-         height=1;
-     
-         }
- Cylinder(double radius,double height){
-  this->radius=radius;
-   this->height=height;
-
-    }
+    Cylinder():radius(1),height(1)
+    { }
+ Cylinder(double radius, double height)
+    : radius(radius), height(height)
+{
+}
 
     void  setRadius(double radius){
 
@@ -39,7 +34,7 @@ class Cylinder {
         this->height=height;
 
     }
-    double getheight(){
+    double getHeight(){
 
         return height;
     }
@@ -66,7 +61,7 @@ int main(){
     c2.setRadius(2.3);
     cout<< "updated radius :"<<c2.getRadius()<<endl;
     c2.setHeight(3.5);
-   cout<< "updated height :"<<c2.getheight()<<endl;
+   cout<< "updated height :"<<c2.getHeight()<<endl;
    c2.calculateVolume ();
 
 
