@@ -5,106 +5,76 @@ using namespace std;
 class Toolbooth{
 
     private:
-       unsigned int total_PayingCar;
-       unsigned int total_NopayingCar;
-        double TotalAmount_OfMoney;
+       unsigned int totalNo_OfCars;
+       
+        double totalAmount_OfMoney;
 
  
         public:
         Toolbooth(){
 
-            total_PayingCar=0;
-            total_NopayingCar=0;
+            totalNo_OfCars=0;
             
-            TotalAmount_OfMoney=0;
+            totalAmount_OfMoney=0;
+            
 
         }
 
       void  payingCar(){
-
-       
-
-       
-       total_PayingCar ++;
-
-      TotalAmount_OfMoney+=0.50;
-
-
-
-        }
-
-        void  nopayCar() {
-             total_NopayingCar++;
-
-          
-        }
-
         
-         void printOnConsole(){
+        totalNo_OfCars++;
+          totalAmount_OfMoney+=0.50;
+
+       
+          }
+
+         void  nopayCar(){
+        
+        totalNo_OfCars++;
+           }
+   
+           void printOnConsole(){
+
+            int payingCar=totalAmount_OfMoney/0.50;
+
+            int nopayCar=totalNo_OfCars-payingCar;
            cout<<"-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"<<endl;
 
         
-            cout<<"Total no of  Tax Paying Cars : "<< total_PayingCar<<endl;
+            cout<<"Total no of   Cars : "<< totalNo_OfCars<<endl;
 
-            cout<<"Total no of Not Tax Paying Cars : "<< total_NopayingCar<<endl;
            
-            cout<<"Total Amount Of money : "<<TotalAmount_OfMoney<<endl;
+            cout<<"Total Amount Of money : "<<totalAmount_OfMoney<<endl;
 
-            cout<<"-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"<<endl;
+            cout<<"total tax Paying Car :"<<payingCar<<endl;
+
+            cout<<"total  NO tax Paying Car :"<<nopayCar<<endl;
+            
+            
+           cout<<"-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"<<endl;
 
          }
 };
 
-int carState(){
-
-   cout<<"0.exit"<<endl;
-   cout<<"1.payingCar"<<endl;
-   cout<<"2.Non Paying Car"<<endl;
-   cout<<"3.Total Amount of Toolbooth"<<endl;
-
-   int choice;
-   cin>>choice;
-    return choice;
-
-
-}
-
-
-
 int main(){
 
     Toolbooth c1;
-    // c1.payingCar();
-    // c1.nopayCar();
-    // c1.printOnConsole();
-
-
-int choice;
-
-while((choice=carState())!=0){
-
-    switch (choice){
-
-    case 1:
-        
+    
     c1.payingCar();
-    break;
-
-
-    case 2:
+    c1.payingCar();
+    c1.payingCar();
     c1.nopayCar();
-    break;
+    c1.payingCar();
+    c1.nopayCar();
+    c1.nopayCar();
+    c1.payingCar();
+    c1.printOnConsole();
+    
+    
+    
 
-    case 3:
-     c1.printOnConsole();
-     break;
 
 
-     default :
-
-               cout<<"Enter A valid Choice";
-    }
-}
 
 
     return 0;

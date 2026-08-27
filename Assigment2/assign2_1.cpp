@@ -38,7 +38,7 @@ class Volume{
             this->height=value;
          }
 
-         void PrintRecord(){
+         void calculateVolume(){
            int result=length*width*height;
 
 
@@ -68,7 +68,6 @@ int main(){
     //c1.PrintRecord();
     Volume c2(4);
     //c2.PrintRecord();
-    
     Volume c3(7,8,2);
 
     //c3.PrintRecord();
@@ -80,8 +79,8 @@ int main(){
          switch (choice){
 
     case 1:
-        
-    c1. PrintRecord();
+        //Volume c1;
+    c1. calculateVolume();
     break;
 
     
@@ -89,14 +88,15 @@ int main(){
 
     case 2:
 
-     
-     c2.PrintRecord();
+    // Volume c2(4);
+     c2.calculateVolume();
      break;
 
     case 3:
 
-      
-     c3.PrintRecord();
+     //Volume c3(7,8,2);
+
+     c3.calculateVolume();
      break;
 
 
